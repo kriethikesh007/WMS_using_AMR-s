@@ -1,0 +1,86 @@
+                 ADMIN
+                   │
+                   ▼
+        Setup Warehouse & AMRs
+                   │
+                   ▼
+        Register Products/Bins
+                   │
+                   ▼
+        Register E-Commerce
+             Merchant
+                   │
+                   ▼
+          Merchant requests
+            fulfillment
+                   │
+                   ▼
+             SALES ORDER
+                   │
+                   ▼
+             PICK ORDER
+                   │
+                   ▼
+       Check Inventory & Bin
+                   │
+                   ▼
+          Assign AMR Robot
+                   │
+                   ▼
+            Robot Picks
+                   │
+                   ▼
+          PICK COMPLETED
+                   │
+                   ▼
+         Update Inventory
+                   │
+                   ▼
+        Fulfillment Completed
+                   │
+                   ▼
+        CUSTOMER INVOICE
+                   │
+                   ▼
+          MERCHANT PAYMENT
+                   │
+                   ▼
+             ACCOUNTING
+                   │
+                   │
+       ┌───────────┴───────────┐
+       │                       │
+       ▼                       ▼
+   REVENUE                  EXPENSE
+       │                       │
+       │                 Robot needs parts
+       │                       │
+       │                       ▼
+       │                PURCHASE ORDER
+       │                       │
+       │                       ▼
+       │                  VENDOR BILL
+       │                       │
+       │                       ▼
+       │                    PAYMENT
+       │                       │
+       └───────────┬───────────┘
+                   ▼
+              JOURNAL
+               ENTRIES
+                   │
+                   ▼
+              BUDGETING
+                   │
+                   ▼
+              REPORTING
+                   │
+        ┌──────────┼──────────┐
+        ▼          ▼          ▼
+   BALANCE      PROFIT &    BUDGET
+    SHEET          LOSS      REPORT
+        │          │          │
+        └──────────┼──────────┘
+                   ▼
+             MANAGEMENT
+              DECISION

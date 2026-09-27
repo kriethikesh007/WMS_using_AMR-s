@@ -1,0 +1,354 @@
+/* ==========================================================================
+   Dashboard Specific Styles
+   ========================================================================== */
+.dashboard-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+@media (max-width: 640px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.system-summary-bar {
+    display: flex;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0.85rem 1.35rem;
+    background: linear-gradient(90deg, rgba(14, 20, 32, 0.7) 0%, rgba(18, 26, 44, 0.5) 100%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.allocation-bar-section {
+    padding-top: 0.75rem;
+}
+
+.progress-bar-bg {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    height: 9px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    background: linear-gradient(90deg, #22C55E 0%, #4ADE80 100%);
+    transition: width 0.4s ease;
+}
+
+/* ==========================================================================
+   Workflow Steps & Interactive Lifecycle
+   ========================================================================== */
+.workflow-steps {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) 0;
+    flex-wrap: wrap;
+}
+
+.workflow-step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    color: var(--text-tertiary);
+    transition: all var(--transition-fast);
+}
+
+.workflow-step.current {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.4);
+    color: var(--primary);
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.2);
+}
+
+.workflow-step.done {
+    background: var(--success-dim);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: var(--success);
+}
+
+.workflow-arrow {
+    color: var(--text-tertiary);
+    font-size: var(--font-size-sm);
+}
+
+/* ==========================================================================
+   Pick & Fulfillment Timeline
+   ========================================================================== */
+.pick-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: var(--space-md) 0;
+    position: relative;
+}
+
+.pick-timeline::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    bottom: 14px;
+    left: 8px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.pick-timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    position: relative;
+    z-index: 1;
+}
+
+.pick-timeline-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #0f1320;
+    border: 2px solid var(--glass-border);
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.pick-timeline-dot.active {
+    border-color: var(--primary);
+    background: var(--primary);
+    box-shadow: 0 0 14px var(--primary);
+}
+
+.pick-timeline-dot.done {
+    border-color: var(--success);
+    background: var(--success);
+    box-shadow: 0 0 10px var(--success-dim);
+}
+
+.pick-timeline-content {
+    flex: 1;
+}
+
+.pick-timeline-title {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.pick-timeline-meta {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   Inventory Quantity Bars
+   ========================================================================== */
+.qty-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.qty-bar-track {
+    flex: 1;
+    height: 7px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    max-width: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.qty-bar-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    background: var(--primary);
+    transition: width var(--transition-base);
+}
+
+.qty-bar-fill.high {
+    background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+}
+
+.qty-bar-fill.medium {
+    background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+}
+
+.qty-bar-fill.low {
+    background: linear-gradient(90deg, #ef4444 0%, #f87171 100%);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+}
+
+/* ==========================================================================
+   AMR Battery Indicator
+   ========================================================================== */
+.battery-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-sm);
+    font-family: var(--font-mono);
+}
+
+.battery-bar {
+    width: 44px;
+    height: 16px;
+    background: rgba(10, 14, 23, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 2px;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.battery-bar::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 4px;
+    width: 3px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0 2px 2px 0;
+}
+
+.battery-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width var(--transition-base);
+}
+
+.battery-fill.high {
+    background: linear-gradient(90deg, #10b981, #34d399);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.battery-fill.medium {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.battery-fill.low {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+/* ==========================================================================
+   Invoice Summary Details
+   ========================================================================== */
+.invoice-summary-card {
+    background: rgba(14, 18, 28, 0.7);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.invoice-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.invoice-detail-row:last-child {
+    border-bottom: none;
+}
+
+.invoice-detail-label {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.invoice-detail-value {
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+}
+
+.invoice-total {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--primary);
+    font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   Order Item Row (Dynamic Modal List)
+   ========================================================================== */
+.order-item-row {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 0.65rem 0.85rem;
+    transition: border-color var(--transition-fast);
+}
+
+.order-item-row:hover {
+    border-color: rgba(34, 197, 94, 0.2);
+}
+
+.order-items-empty {
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+/* ==========================================================================
+   Light Theme Overrides
+   ========================================================================== */
+[data-theme='light'] .system-summary-bar {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .progress-bar-bg {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .battery-bar {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='light'] .invoice-summary-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .order-item-row {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.1);
+}

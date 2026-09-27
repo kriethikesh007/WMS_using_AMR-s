@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA WMS — Autonomous Warehouse Intelligence</title>
+    <meta name="description" content="NEXORA WMS — Autonomous Robotic Warehouse Inventory and Micro-Fulfillment Command System">
+    <!-- Custom Geometric Green NEXORA SVG Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='22' width='100' height='100' fill='%230A0F0C'/><rect x='4' y='4' width='92' height='92' rx='18' fill='none' stroke='%2322C55E' stroke-width='4'/><path d='M28 72 V28 L72 72 V28' stroke='%2322C55E' stroke-width='10' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='50' cy='50' r='6' fill='%234ADE80'/></svg>">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div class="app">
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo" title="NEXORA WMS">
+                <!-- Custom Geometric Robotics / Warehouse Vector Logo -->
+                <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+                    <path d="M26 74 V26 L74 74 V26" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="7" fill="#070B08"/>
+                </svg>
+            </div>
+            <div>
+                <div class="sidebar-title">
+                    <span>NEXORA WMS</span>
+                    <span class="pulse-indicator" title="AMR Fleet Mesh Connected"></span>
+                </div>
+                <div class="sidebar-subtitle">Autonomous Warehouse Intelligence</div>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">Command Center</div>
+            <a class="nav-item active" href="#dashboard" data-page="dashboard">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg></span>
+                <span class="nav-label">Dashboard</span>
+            </a>
+
+            <div class="nav-section-title">Infrastructure</div>
+            <a class="nav-item" href="#warehouse" data-page="warehouse">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
+                <span class="nav-label">Warehouses</span>
+            </a>
+            <a class="nav-item" href="#bin" data-page="bin">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></span>
+                <span class="nav-label">Storage Bins</span>
+            </a>
+
+            <div class="nav-section-title">Catalog & Inventory</div>
+            <a class="nav-item" href="#product" data-page="product">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></span>
+                <span class="nav-label">Products</span>
+            </a>
+            <a class="nav-item" href="#inventory" data-page="inventory">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg></span>
+                <span class="nav-label">Inventory</span>
+            </a>
+
+            <div class="nav-section-title">Autonomous Robotics</div>
+            <a class="nav-item" href="#amr" data-page="amr">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg></span>
+                <span class="nav-label">AMR Fleet</span>
+            </a>
+
+            <div class="nav-section-title">Commerce</div>
+            <a class="nav-item" href="#merchant" data-page="merchant">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 7v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-3-5z"></path><line x1="3" y1="7" x2="21" y2="7"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg></span>
+                <span class="nav-label">Merchants</span>
+            </a>
+            <a class="nav-item" href="#order" data-page="order">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></span>
+                <span class="nav-label">Sales Orders</span>
+            </a>
+
+            <div class="nav-section-title">Operations & Finance</div>
+            <a class="nav-item" href="#fulfillment" data-page="fulfillment">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span>
+                <span class="nav-label">Fulfillment Picks</span>
+            </a>
+            <a class="nav-item" href="#invoice" data-page="invoice">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></span>
+                <span class="nav-label">Invoices</span>
+            </a>
+            <a class="nav-item" href="#budget" data-page="budget">
+                <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+                <span class="nav-label">Budgets</span>
+            </a>
+
+            <div class="nav-section-title">Security & Access</div>
+            <a class="nav-item" href="javascript:void(0)" id="sidebar-auth-btn" data-page="auth" style="border: 1px dashed rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.05); margin-top: 6px;">
+                <span class="nav-icon" style="color:var(--primary);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                <span class="nav-label" id="sidebar-auth-label" style="color:var(--primary); font-weight:700;">Operator Sign In</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span class="pulse-indicator"></span>
+            <span>AMR Fleet Mesh Online</span>
+        </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="main">
+        <header class="header">
+            <div class="header-left">
+                <button class="btn btn-icon btn-secondary" id="menu-toggle" aria-label="Toggle Sidebar Menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                <div class="header-title" id="header-title">System Dashboard</div>
+            </div>
+            <div class="header-right">
+                <div class="header-badge" id="system-status-badge">
+                    <span class="pulse-indicator" style="width:6px; height:6px;"></span>
+                    <span>Systems Operational</span>
+                </div>
+                <div class="header-clock-container">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span id="header-clock">--:--:--</span>
+                </div>
+
+                <!-- Prominent Operator Authentication Control (Header) -->
+                <div class="header-auth" id="header-auth">
+                    <button type="button" class="btn btn-sm btn-primary auth-signin-btn" id="header-signin-btn" style="box-shadow: 0 0 14px rgba(34, 197, 94, 0.4);">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        <span style="font-weight:700;">Sign In</span>
+                    </button>
+                </div>
+
+                <button class="btn btn-icon btn-secondary" id="theme-toggle" aria-label="Toggle Theme" title="Switch to Light Mode">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="content" id="page-content"></main>
+    </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

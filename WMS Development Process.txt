@@ -1,0 +1,60 @@
+PHASE 0 — PROJECT FOUNDATION
+        │
+        ▼
+PHASE 1 — ADMIN & WAREHOUSE SETUP
+        │
+        ▼
+PHASE 2 — PRODUCT & BIN MANAGEMENT
+        │
+        ▼
+PHASE 3 — MERCHANT MANAGEMENT
+        │
+        ▼
+PHASE 4 — SALES ORDER
+        │
+        ▼
+PHASE 5 — PICK ORDER
+        │
+        ▼
+PHASE 6 — INVENTORY & BIN CHECK
+        │
+        ▼
+PHASE 7 — AMR ASSIGNMENT
+        │
+        ▼
+PHASE 8 — ROBOT PICKING
+        │
+        ▼
+PHASE 9 — FULFILLMENT
+        │
+        ▼
+PHASE 10 — INVOICING & PAYMENT
+        │
+        ▼
+PHASE 11 — ACCOUNTING
+        │
+        ├───────────────┐
+        ▼               ▼
+     REVENUE          EXPENSE
+        │               │
+        │               ▼
+        │          PURCHASE ORDER
+        │               │
+        │               ▼
+        │          VENDOR BILL
+        │               │
+        │               ▼
+        │            PAYMENT
+        │               │
+        └───────┬───────┘
+                ▼
+          JOURNAL ENTRIES
+                │
+                ▼
+             BUDGETING
+                │
+                ▼
+             REPORTING
+                │
+                ▼
+         MANAGEMENT DECISION
